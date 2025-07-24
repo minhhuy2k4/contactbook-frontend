@@ -33,7 +33,7 @@
         <button v-if="contactLocal._id" type="button" class="ml-2 btn btn-danger" @click="deleteContact">
             Xóa
         </button>
-        <button type="button" class="ml-2 btn btn-danger" @click="$emit('Cancel')">
+        <button type="button" class="ml-2 btn btn-danger" @click="Cancel">
             Thoát
         </button>
     </div>
@@ -92,9 +92,8 @@ export default {
             if (reply) {
                 // stay on the page if
                 // user clicks 'Cancel'
-                return false
+                this.$router.push({ name: "contactbook" });
             }
-            else this.$router.push({ name: "contactbook" });
         },
     },
 };
